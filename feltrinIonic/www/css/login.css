@@ -1,0 +1,47 @@
+.content-login{
+	width: 100%;
+	min-height: 100%;
+	text-align: center;
+    background-image: url('../img/bg-pattern.png'), linear-gradient(#010b1d,#3b3b52);
+    color: white;
+}
+
+.locked{
+	margin-top: 7vw;
+	height: 30vw;
+}
+
+.input-login{
+    padding-left: 2vh !important;
+    padding-right: 2vh!important;
+    width: 70% !important;
+    height: 10% !important;
+    margin-top: 1em !important;
+    display: inline !important;
+    background-image: url('../img/bg-pattern.png'), linear-gradient(#161620,#000000) !important;
+    border-radius: 0.5vh;
+    font-family: 'Titillium Web';
+    font-size: 20px !important;
+    border: none;
+    outline: none;
+    color: white !important;
+}
+
+.button-login{
+    margin-top: 3vh !important;
+    padding-top: 0em !important;
+    background-image: url('../img/bg-pattern.png'), linear-gradient(#A7CF44,#008351) !important;
+    border-radius: 0.5vh !important;
+    font-family: 'Titillium Web' !important;
+    font-size: 20px !important;
+    border: none !important;
+    width: 70% !important;
+    height: 10% !important;
+    color: white !important;
+    text-transform: none !important;
+}
+
+.logo-login{
+	height: 1.5em;
+}
+

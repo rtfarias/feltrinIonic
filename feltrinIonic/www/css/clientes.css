@@ -1,0 +1,82 @@
+.botao{
+    height: 40px;
+    padding: 1.5vw;
+    padding-top: 0px;
+    margin: 0px;
+    background-image: linear-gradient(#A7CF44,#008351) !important;
+    border-radius: 0.5em;
+    color: white !important;
+    font-family: 'Titillium Web';
+    font-size: 1.7em;
+    width: 90%;
+}
+
+.labelTituloClientes{
+    color: black;
+    font-size: 1.7em;
+    text-align: left;
+    width: 90%;
+    margin-left: 5%;
+    font-family: 'Titillium Web';
+}
+
+.labelClientes{
+    color: #999999;
+    font-size: 1.4em;
+    text-align: left;
+    width: 90%;
+    margin-left: 5%;
+    margin-top: 5px;
+}
+
+.separador{
+    background-color: #CCCCCC;
+    height: 1px;
+    width: 90%;
+    margin-top: 5px;
+    margin-left: 5%;
+    margin-right: 5%;
+}
+
+.select{
+    background-color: transparent;
+    width: 90%;
+    border: 1px solid rgb(169, 169, 169) !important;
+    height: 40px !important;
+    color: #999999 !important;
+    margin-left: 5%;
+    margin-right: 5%;
+    margin-top: 5px;
+    border-color: #CCCCCC !important;
+}
+
+.input{
+    height: 40px !important;
+    width: 90%;
+    border: 1px solid rgb(169, 169, 169) !important;
+    color: #999999 !important;
+    margin-top: 5px !important;
+    margin-left: 5% !important;
+    margin-right: 5% !important;
+    padding: 5px !important;
+}
+
+.lista-cliente-titulo{
+    width: 90%;
+    font-family: inherit;
+    font-size: 18px;
+    text-align: left;
+    background: transparent;
+    padding-top: 3vw;
+}
+
+.lista-cliente-subtitulo{
+    width: 90%;
+    font-family: inherit;
+    font-size: 12px;
+    text-align: left;
+    background: transparent;
+    border-radius: 0px;
+    border-bottom: 1px solid rgba(0,0,0,0.15);
+    padding-bottom: 3vw;
+}

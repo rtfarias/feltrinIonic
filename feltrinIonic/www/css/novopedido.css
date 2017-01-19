@@ -1,0 +1,165 @@
+.page-novopedido{
+	background-color: white;
+	width: 100%;
+	height: auto;
+	text-align: center;
+}
+
+.bolder-text{
+	font-family: 'Titillium Web';
+}
+
+.first-line-novopedido{
+	padding-top: 4vw;
+	font-size: 5vw;
+	color: black;
+}
+
+.second-line-novopedido{
+	font-size: 3.5vw;
+	color: #868695;
+	margin-bottom: 2vh;
+}
+
+.msgListaPedido{
+    font-size: 1.5em;
+    margin-top: 7vh;
+    color: red;
+}
+
+.color-novopedido{
+	background-color: #98C636;
+	margin-bottom: 0.25em;
+	width: 80px;
+    height: 79px;
+	padding-left: 0.2em;
+	z-index: 8;
+	text-align: right;
+}
+
+.pic-novopedido{
+	width: 80px;
+    height: 79px;
+	padding: 0px;
+	margin: 0px;
+	z-index: 88;
+}
+
+
+.items-add{
+	width: 2.5em;
+	height: 0em;
+	padding: 2em 2em 2em 1em;
+	text-align: left;
+	padding-right: 0.5em;
+	border: 1px solid grey;
+}
+
+.labelListaProduto{
+	padding: 5px !important;
+	padding-left: 0 !important;
+}
+
+.col{
+	position: relative;
+}
+
+.labelBaixoLista{
+	color: #B9B9C8;
+    font-size: 1.1em;
+    text-align: left;
+    margin-left: -10px !important;
+    position: absolute;
+    bottom: 5px;
+}
+
+.inputItem{
+	width: 50%;
+}
+
+.inputQuantidade{
+	width: 4em;
+    height: 4em !important;
+    text-align: center;
+    border: 1px solid grey !important;
+}
+
+.areaComentario{
+    width: 90%;
+    margin-left: 5%;
+    margin-right: 5%;
+    margin-top: 2vh;
+    border: solid;
+    border-width: 1px;
+    border-color: #CCCCCC !important;
+    padding: 5%;
+    border-radius: 3vh;
+    height: 60vh;
+}
+
+.fecharModal{
+	font-size: 34px;
+    color: white;
+    position: absolute;
+    z-index: 100;
+    top: 13px;
+    left: 15px;
+}
+
+.confirmaModal{
+    font-size: 32px;
+    color: white;
+    position: absolute;
+    z-index: 100;
+    top: 10px;
+    right: 18px;
+}
+
+.botaoSalvarComentario{
+	margin-top: 3vh !important;
+}
+
+.itemPedido{
+	margin-top: 20px;
+	margin-bottom: 20px;
+}
+
+.inputPreco{
+    width: 5em;
+    height: 4em;
+    text-align: center;
+    border: 1px solid grey !important;
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+.inputPrecoTotal{
+	width: 6em !important;
+}
+
+.labelCinzaProduto{
+	color: #B9B9C8; 
+	font-size: 1.1em; 
+	text-align: left;
+}
+
+.fundo-amarelo{
+	background-color: rgba(239, 255, 0, 0.2);
+}
+
+.fundo-roxo{
+	background-color: rgba(151, 15, 220, 0.2);
+}
+
+.fundo-verde{
+	background-color: rgba(15, 220, 31, 0.2);
+}
+
+
+
+
+
+
+
+
+

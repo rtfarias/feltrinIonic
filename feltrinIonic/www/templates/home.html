@@ -1,0 +1,18 @@
+<ion-view view-title="Pedidos" style="background-color:#050507">
+  <ion-content align="center">
+    <!--img src="img/unlocked.png" class="unlocked"-->
+	<div class="first-line-home"  style="margin-top:10vh" >Olá, <span class="span-user-name" ng-bind="nomeVendedor"></span></div>
+	<div class="second-line-home">O que você gostaria de fazer agora?</div>
+	<div style="margin-top:2%" align="center">
+		<button class="button-home button-clear" ng-click="goto('app.meuspedidos')" >
+			<img src="img/button-meuspedidos.png" class="image-button-home">
+			<div class="title-button-home">Meus Pedidos</div>
+		</button>
+		<button class="button-home button-clear" ng-click="clickNovoPedido();">
+			<img src="img/button-novopedido.png" class="image-button-home">
+			<div class="title-button-home">Novo Pedido</div>
+		</button>
+	</div>
+  </ion-content>
+
+</ion-view>

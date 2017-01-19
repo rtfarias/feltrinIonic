@@ -1,0 +1,138 @@
+<ion-view view-title="CADASTRO CLIENTE">
+  <ion-content align="center" style="margin-top:1%;">
+
+  	<div class="row responsive-sm" style="width:100%">
+
+  	  <div class="col">	
+
+  		<div class="labelTituloClientes">Dados Pessoais</div>
+  		<div class="separador"></div>
+
+      <div class="labelClientes">Física/Jurídica</div>
+      <select class="select" ng-model="cadastro.inputTipoPessoa" read-only>
+        <!-- <option value="1">Física</option> -->
+        <option value="2">Jurídica</option>
+      </select>
+
+      <div class="labelClientes" >CPF/CNPJ</div>
+      <input class="input" ng-model="cadastro.inputCPF" ui-br-cpfcnpj-mask>
+
+  		<div class="labelClientes" style="margin-top: 5%">Nome</div>
+  		<input class="input" ng-model="cadastro.inputNome">
+
+  		<div class="labelClientes">Sobrenome</div>
+  		<input class="input" ng-model="cadastro.inputSobrenome">
+
+
+  		<div class="labelClientes">RG</div>
+  		<input class="input" ng-model="cadastro.inputRG">
+
+  		<div class="labelClientes">Inscrição Estadual</div>
+  		<input class="input" ng-model="cadastro.inputIE">
+
+  		<div class="labelClientes">Data Nascimento</div>
+  		<input type="date" class="select" ng-model="cadastro.inputDataNascimento">
+
+  		<!--Contato-->
+  		<div class="labelTituloClientes" style="margin-top: 5%">Dados de Contato</div>
+  		<div class="separador"></div>
+
+  		<div class="labelClientes" style="margin-top: 5%">Tel. Fixo</div>
+  		<input class="input" ng-model="cadastro.inputTelFixo">
+
+  		<div class="labelClientes">Tel. Móvel</div>
+  		<input class="input" ng-model="cadastro.inputTelMovel">
+
+  		<div class="labelClientes">E-mail</div>
+  		<input class="input" ng-model="cadastro.inputEmail">
+
+  	  </div>
+
+  	  <div class="col">
+
+  		<div class="labelTituloClientes" style="margin-top: 5%">Endereço Entrega/Cobrança</div>
+  		<div class="separador"></div>
+
+
+  		<div class="labelClientes">Rua</div>
+  		<input class="input" ng-model="cadastro.inputRua">
+
+  		<div class="labelClientes">Numero</div>
+  		<input class="input" ng-model="cadastro.inputNumero">
+
+  		<div class="labelClientes">Bairro</div>
+  		<input class="input" ng-model="cadastro.inputBairro">
+
+  		<div class="labelClientes">Complemento</div>
+  		<input class="input" ng-model="cadastro.inputComplemento">
+
+  		<div class="labelClientes">UF</div>
+  		<select class="select" ng-model="cadastro.inputUF">
+          <option value="RS">RS</option><option value="AC">AC</option><option value="AL">AL</option><option value="AP">AP</option>
+          <option value="AM">AM</option><option value="BA">BA</option><option value="CE">CE</option><option value="DF">DF</option>
+          <option value="ES">ES</option><option value="GO">GO</option><option value="MA">MA</option><option value="MT">MT</option>
+          <option value="MS">MS</option><option value="MG">MG</option><option value="PA">PA</option><option value="PB">PB</option>
+          <option value="PR">PR</option><option value="PE">PE</option><option value="PI">PI</option><option value="RJ">RJ</option>
+          <option value="RN">RN</option><option value="RO">RO</option><option value="RR">RR</option>
+          <option value="SC">SC</option><option value="SP">SP</option><option value="SE">SE</option><option value="TO">TO</option>
+      </select>
+
+  		<div class="labelClientes">Cidade</div>
+  		<input class="input" ng-model="cadastro.inputCidade">
+
+  		<div class="labelClientes">CEP</div>
+  		<input class="input" ng-model="cadastro.inputCEP">
+
+
+
+      <div class="row">
+        <input type="checkbox" ng-model="checkboxEndereco.checked" ng-change="changeEndereco()" style="margin-top: 3vh;">
+        <div class="labelTituloClientes" style="margin-top: 5%">Endereço Entrega</div>
+      </div>
+
+  		<div class="labelClientes"  style="font-size:1.3em;">Marque se o endereço de entrega for diferente do endereço de cobrança.</div>
+  		<div class="separador"></div>
+
+      <div ng-show="showEnderecoEntrega">
+
+      		<div class="labelClientes">Rua</div>
+      		<input class="input" ng-model="cadastro.inputRua2">
+
+      		<div class="labelClientes">Numero</div>
+      		<input class="input" ng-model="cadastro.inputNumero2">
+
+      		<div class="labelClientes">Bairro</div>
+      		<input class="input" ng-model="cadastro.inputBairro2">
+
+      		<div class="labelClientes">Complemento</div>
+      		<input class="input" ng-model="cadastro.inputComplemento2">
+
+      		<div class="labelClientes">UF</div>
+      		<select class="select" ng-model="cadastro.inputUF2">
+              <option value="RS">RS</option><option value="AC">AC</option><option value="AL">AL</option><option value="AP">AP</option>
+              <option value="AM">AM</option><option value="BA">BA</option><option value="CE">CE</option><option value="DF">DF</option>
+              <option value="ES">ES</option><option value="GO">GO</option><option value="MA">MA</option><option value="MT">MT</option>
+              <option value="MS">MS</option><option value="MG">MG</option><option value="PA">PA</option><option value="PB">PB</option>
+              <option value="PR">PR</option><option value="PE">PE</option><option value="PI">PI</option><option value="RJ">RJ</option>
+              <option value="RN">RN</option><option value="RO">RO</option><option value="RR">RR</option>
+              <option value="SC">SC</option><option value="SP">SP</option><option value="SE">SE</option><option value="TO">TO</option>
+          </select>
+
+      		<div class="labelClientes">Cidade</div>
+      		<input class="input" ng-model="cadastro.inputCidade2">
+
+      		<div class="labelClientes">CEP</div>
+      		<input class="input" ng-model="cadastro.inputCEP2">
+
+      </div>
+
+  	  </div>
+
+  	</div>
+
+  	<!--button class="botao" ng-click="clickSalvar(cadastro)" ng-show="showSalvar">Salvar</button-->
+
+  	<div style="height: 250px"></div>
+
+  </ion-content>
+</ion-view>

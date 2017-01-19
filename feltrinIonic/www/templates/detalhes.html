@@ -1,0 +1,50 @@
+<ion-view view-title="{{topTitle}}">
+  <ion-content align="center" style="margin-top:1%;">
+    <div class="product-title" ng-bind="produtoSelecionado.Nome">
+		<div style="padding-top: 0.75em;" ng-bind="dados.Nome">&nbsp&nbsp&nbsp&nbsp&nbsp ALFACE MÔNICA SF31</div>
+	</div>
+
+	<div class="product-details" layout="column">
+		<div class="row top-product">
+			<div class="col">
+				<div class="color-product-detail"><img ng-src="{{::dados.Foto}}" id="imagemDetalhe" class="image-product-detail"></div>
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="left-table" style="color:black">Dados Técnicos:</div>
+		</div>
+
+		<div class="col table-product" ng-repeat="dado in dadosTecnicos">
+			<div class="left-table" ng-bind="dado.Nome">REF</div>
+			<div class="right-table" ng-bind="dado.Descricao"></div>
+		</div>
+
+		<!--div class="row table-product">
+			<div class="left-table">CULTIVAR</div>
+			<div class="right-table" ng-bind="::dados.Nome">ALFACE MÔNICA SF31</div>
+		</div>
+
+		<div class="row table-product">
+			<div class="left-table">COLHEITA (DIAS)</div>
+			<div class="right-table" ng-bind="::dados.Cultivo">60 A 70 DIAS</div>
+		</div>
+
+		<div class="row table-product">
+			<div class="left-table">TIPO</div>
+			<div class="right-table" ng-bind="::dados.Categoria">CRESPA</div>
+		</div-->
+
+		<!--div layout="row" class="table-product">
+			<div flex="40" class="left-table">COR</div>
+			<div flex="60" class="right-table">VERDE MÉDIO</div>
+		</div>
+
+		<div layout="row" class="table-product">
+			<div flex="40" class="left-table">DESTAQUES</div>
+			<div flex="60" class="right-table" style="font-size: 3.5vw;">EXCELENTE QUALIDADE COMERCIAL, VOLUMOSA, TOLERANTE A TEMPERATURAS ELEVADAS E AO PENDOAMENTO</div>
+		</div-->
+
+	</div>
+  </ion-content>
+</ion-view>

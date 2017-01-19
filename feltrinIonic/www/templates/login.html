@@ -1,0 +1,19 @@
+<ion-modal-view class="modal">
+
+  <ion-content class="content-login" align="center" > 
+      <div class="product-title">Login
+      </div>
+
+      <img src="img/unlocked.png" class="unlocked">
+      <div class="first-line-home">Faça seu login<span class="span-user-name">&nbsp para acessar o app</span></div>
+
+      <input class="input-login" ng-model="dadosLogin.usuario" placeholder="Usuário">
+
+      <input type="password" class="input-login" ng-model="dadosLogin.senha" placeholder="Senha">
+
+      <button class="button-login button-clear" ng-click="clickLogar(dadosLogin)">Acessar agora!</button>
+
+      <div style="height: 250px"></div>
+
+  </ion-content>
+</ion-modal-view>

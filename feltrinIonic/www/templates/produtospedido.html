@@ -1,0 +1,271 @@
+<ion-view view-title="{{topTitle}}">
+
+
+	<div ng-if="showGrade == 2" align="center" style="margin-top: 7vh;margin-bottom: 5vh;">
+
+		<div class="first-line-catalogo" style="margin-right: 5%;margin-left: 5%;font-size: 2.5vh;">Grade: <span class="bolder-text">&nbsp{{grade}}</span>&nbsp - &nbsp {{linha}} </div>
+		<div class="first-line-catalogo" style="margin-right: 5%;margin-left: 5%;font-size: 2.5vh;margin-top:0;">Preço: <span class="bolder-text">&nbsp R${{preco}}</span>&nbsp Emb.: <span class="bolder-text">&nbsp{{embalagem}}</span></div>
+
+	</div>
+
+	<input type="text" placeholder="   _Digite o que você procura" class="input-catalogo-item" ng-model="busca" style="margin-top: 10vh;" ng-style="showGrade == 2 && {'margin-top':'5vh'}">
+
+  <ion-content align="center" style="margin-top:13vh;" ng-style="showGrade == 2 && {'margin-top':'23vh'}">
+
+   
+
+<!--DIV CASO A LISTA SEJA NORMAL (SEM GRADE)---------------------------------------------------------------------------------------------------->
+	<div ng-if="showGrade == 1">
+
+    	<div id="listaProdutos" ng-if="showListaProdutos==1">
+
+	    	<div ng-repeat="grupo in dados | filter: busca">
+	    		
+	    		<label flex="30" class="bolder-text" style="color: black; font-size: 1.6em; text-align: left;" ng-bind="::grupo.Descricao"></label>
+	    		<div class="row" ng-repeat="dado in grupo.ItensGrupoNormal  | filter: busca" ng-click="clickCategoriaSemGrade(dado)">
+					<div class="col-75" ng-show='dado.Referencia != "" '>
+						<label class="row " style="font-size: 1.1em; text-align: left;" ng-bind="::dado.DescricaoDaReferencia"></label>
+						<div class="row">
+							<label flex="30" class="bolder-text" style="color: #B9B9C8; font-size: 1.1em; text-align: left;" ng-bind="::'REF.'+dado.Referencia"></label>
+						</div> 
+					</div>
+					<div class="col-75" ng-show='dado.Referencia == "" '>
+						<label class="row " style="font-size: 1.1em; text-align: left;" ng-bind="::dado.DescricaoDoItem"></label>
+						<div class="row">
+							<label flex="30" class="bolder-text" style="color: #B9B9C8; font-size: 1.1em; text-align: left;" ng-bind="::'Cod.'+dado.CodigoDoItem"></label>
+						</div> 
+					</div>
+					
+				</div>
+
+	    	</div>
+
+	    	<div ng-repeat="grupo in dados2 | filter: busca">
+	    		
+	    		<label flex="30" class="bolder-text" style="color: black; font-size: 1.6em; text-align: left;" ng-bind="::grupo.Descricao"></label>
+	    		<div class="row" ng-repeat="dado in grupo.ItensGrupoNormal | filter: busca" ng-click="clickCategoriaSemGrade(dado)">
+					<div class="col-75" ng-show='dado.Referencia != "" '>
+						<label class="row " style="font-size: 1.1em; text-align: left;" ng-bind="::dado.DescricaoDaReferencia"></label>
+						<div class="row">
+							<label flex="30" class="bolder-text" style="color: #B9B9C8; font-size: 1.1em; text-align: left;" ng-bind="::'REF.'+dado.Referencia"></label>
+						</div> 
+					</div>
+					<div class="col-75" ng-show='dado.Referencia == "" '>
+						<label class="row " style="font-size: 1.1em; text-align: left;" ng-bind="::dado.DescricaoDoItem"></label>
+						<div class="row">
+							<label flex="30" class="bolder-text" style="color: #B9B9C8; font-size: 1.1em; text-align: left;" ng-bind="::'Cod.'+dado.CodigoDoItem"></label>
+						</div> 
+					</div>
+					
+				</div>
+
+	    	</div>
+
+			<!--div class="row" ng-repeat="dado in dados">
+				<div class="col-50">
+					<label class="row " style="font-size: 1.1em; text-align: left;" ng-bind="::dado.DescricaoDoItem"></label>
+					<label class="row bolder-text" style="font-size: 0.9em; text-align: left;" ng-bind="::dado.DescricaoDoGrupo"></label>
+					<div class="row">
+						<label flex="30" class="bolder-text" style="color: #B9B9C8; font-size: 1.1em; text-align: left;" ng-bind="::'REF.'+dado.Referencia"></label>
+					</div> 
+				</div>
+				<div class="col-25">
+					<label class="row bolder-text" style="font-size: 0.95em; text-align: left;" ng-bind="::dado.PrecoDeVenda"></label>
+					<div class="row">
+						<label flex="30" class="bolder-text" style="color: #B9B9C8; font-size: 1.1em; text-align: left;" ng-bind="::'Peso:'+dado.PesoLiquido"></label>
+					</div> 
+				</div>
+				<div class="col">
+					<input class="inputQuantidade" ng-model="dado.quantidade" ng-change="changeItemPedido(dado)" type="number" />
+				</div>
+			</div>
+
+			<div class="row" ng-repeat="dado in dados2">
+				<div class="col-50">
+					<label class="row " style="font-size: 1.1em; text-align: left;" ng-bind="::dado.DescricaoDoItem"></label>
+					<label class="row bolder-text" style="font-size: 0.9em; text-align: left;" ng-bind="::dado.DescricaoDoGrupo"></label>
+					<div class="row">
+						<label flex="30" class="bolder-text" style="color: #B9B9C8; font-size: 1.1em; text-align: left;" ng-bind="::'REF.'+dado.Referencia"></label>
+					</div> 
+				</div>
+				<div class="col-25">
+					<label class="row bolder-text" style="font-size: 0.95em; text-align: left;" ng-bind="::dado.PrecoDeVenda"></label>
+					<div class="row">
+						<label flex="30" class="bolder-text" style="color: #B9B9C8; font-size: 1.1em; text-align: left;" ng-bind="::'Peso:'+dado.PesoLiquido"></label>
+					</div> 
+				</div>
+				<div class="col">
+					<input type="number" ng-model="dado.quantidade" ng-change="changeItemPedido(dado)" class="inputQuantidade"/>
+				</div>
+			</div-->
+
+		</div>
+
+		<div id="listaProdutos" ng-if="showListaProdutos==2">
+
+
+
+			<div class="col" style="position:absolute; width:48%; left:0; top: 2%;">
+
+
+				<div ng-repeat="grupo in dados | filter: busca">
+		    		<label flex="30" class="bolder-text" style="color: black; font-size: 1.6em; text-align: left;" ng-bind="::grupo.Descricao"></label>
+		    		<div class="row" ng-repeat="dado in grupo.ItensGrupoNormal | filter: busca" ng-click="clickCategoriaSemGrade(dado)">
+						<div class="col-50">
+								<label class="row " style="font-size: 1.1em; text-align: left;" ng-bind="::dado.DescricaoDaReferencia"></label>
+								<div class="row">
+									<label flex="30" class="bolder-text" style="color: #B9B9C8; font-size: 1.1em; text-align: left;" ng-bind="::'REF.'+dado.Referencia"></label>
+								</div> 
+							
+						</div>
+						<div class="col-50" ng-show='dado.Referencia == "" '>
+							<label class="row " style="font-size: 1.1em; text-align: left;" ng-bind="::dado.DescricaoDoItem"></label>
+							<div class="row">
+								<label flex="30" class="bolder-text" style="color: #B9B9C8; font-size: 1.1em; text-align: left;" ng-bind="::'Cod.'+dado.CodigoDoItem"></label>
+							</div> 
+						</div>
+						
+					</div>
+
+		    	</div>
+			</div>
+
+			<div class="col" style="position:absolute; width:48%; right:0; top: 2%;">
+				<div ng-repeat="grupo in dados2 | filter: busca">
+		    		<label flex="30" class="bolder-text" style="color: black; font-size: 1.6em; text-align: left;" ng-bind="::grupo.Descricao"></label>
+		    		<div class="row" ng-repeat="dado in grupo.ItensGrupoNormal | filter: busca" ng-click="clickCategoriaSemGrade(dado)">
+						<div class="col-50" ng-show='dado.Referencia != "" '>
+							<label class="row " style="font-size: 1.1em; text-align: left;" ng-bind="::dado.DescricaoDaReferencia"></label>
+							<div class="row">
+								<label flex="30" class="bolder-text" style="color: #B9B9C8; font-size: 1.1em; text-align: left;" ng-bind="::'REF.'+dado.Referencia"></label>
+							</div> 
+						</div>
+						<div class="col-50" ng-show='dado.Referencia == "" '>
+							<label class="row " style="font-size: 1.1em; text-align: left;" ng-bind="::dado.DescricaoDoItem"></label>
+							<div class="row">
+								<label flex="30" class="bolder-text" style="color: #B9B9C8; font-size: 1.1em; text-align: left;" ng-bind="::'Cod.'+dado.CodigoDoItem"></label>
+							</div> 
+						</div>
+						
+
+					</div>
+
+		    	</div>
+			</div>
+
+		</div>
+	</div>
+
+
+
+<!--DIV CASO A LISTA SEJA GRADE---------------------------------------------------------------------------------------------------->
+	<div ng-if="showGrade == 2">
+
+
+    	<div id="listaProdutos" ng-if="showListaProdutos==1">
+
+			<div class="row" ng-repeat="dado in dados | filter: busca">
+				<div class="col-75">
+					<label class="row " style="font-size: 1.1em; text-align: left;" ng-bind="::dado.DescricaoDoItem"></label>
+					<div class="row">
+						<label flex="30" class="bolder-text" style="color: #B9B9C8; font-size: 1.1em; text-align: left;" ng-bind="::'REF.'+dado.Referencia"></label>
+					</div> 
+				</div>
+				<div class="col">
+					<input class="inputQuantidade" ng-model="dado.Quantidade" ng-change="changeItemPedido(dado)" type="number" />
+				</div>
+			</div>
+
+			<div class="row" ng-repeat="dado in dados2 | filter: busca">
+				<div class="col-75">
+					<label class="row " style="font-size: 1.1em; text-align: left;" ng-bind="::dado.DescricaoDoItem"></label>
+					<div class="row">
+						<label flex="30" class="bolder-text" style="color: #B9B9C8; font-size: 1.1em; text-align: left;" ng-bind="::'REF.'+dado.Referencia"></label>
+					</div> 
+				</div>
+				<div class="col">
+					<input class="inputQuantidade" ng-model="dado.Quantidade" ng-change="changeItemPedido(dado)" type="number" />
+				</div>
+			</div>
+
+		</div>
+
+		<div id="listaProdutos" ng-if="showListaProdutos==2">
+
+			<div class="col" style="position:absolute; width:50%; left:0; top: 2%;">
+				<div class="row" ng-repeat="dado in dados | filter: busca">
+					<div class="col-75">
+						<label class="row " style="font-size: 1.1em; text-align: left;" ng-bind="::dado.DescricaoDoItem"></label>
+						<div class="row">
+							<label flex="30" class="bolder-text" style="color: #B9B9C8; font-size: 1.1em; text-align: left;" ng-bind="::'REF.'+dado.Referencia"></label>
+						</div> 
+					</div>
+					<div class="col">
+						<input class="inputQuantidade" ng-model="dado.Quantidade" ng-change="changeItemPedido(dado)" type="number" />
+					</div>
+				</div>
+			</div>
+
+			<div class="col" style="position:absolute; width:50%; right:0; top: 2%;">
+				<div class="row" ng-repeat="dado in dados2 | filter: busca">
+					<div class="col-75">
+						<label class="row " style="font-size: 1.1em; text-align: left;" ng-bind="::dado.DescricaoDoItem"></label>
+						<div class="row">
+							<label flex="30" class="bolder-text" style="color: #B9B9C8; font-size: 1.1em; text-align: left;" ng-bind="::'REF.'+dado.Referencia"></label>
+						</div> 
+					</div>
+					<div class="col">
+						<input class="inputQuantidade" ng-model="dado.Quantidade" ng-change="changeItemPedido(dado)" type="number" />
+					</div>
+				</div>
+			</div>
+
+		</div>
+
+	</div>
+
+
+	<div style="height: 250px"></div>
+
+
+  </ion-content>
+
+  		<!--div id="detalhesProduto" class="col"  ng-show="showDetalhes==true" >
+
+				<div class="row">
+					<div>
+						<div class="color-product-detail2"><img ng-src="{{produto.Foto}}" id="imagemDetalhe" class="image-product-detail2"></div>
+					</div>
+				</div>
+
+				<div class="row">
+					<div class="left-table2">REF</div>
+					<div class="right-table2" ng-bind="produto.Referencia"></div>
+				</div>
+
+				<div class="row">
+					<div class="left-table2">CULTIVAR</div>
+					<div class="right-table2" ng-bind="produto.Nome">ALFACE MÔNICA SF31</div>
+				</div>
+
+				<div class="row">
+					<div class="left-table2">COLHEITA (DIAS)</div>
+					<div class="right-table2" ng-bind="produto.Cultivo">60 A 70 DIAS</div>
+				</div>
+
+				<div class="row">
+					<div class="left-table2">TIPO</div>
+					<div class="right-table2" ng-bind="produto.Categoria">CRESPA</div>
+				</div>
+
+				<!--div layout="row" class="table-product">
+					<div flex="40" class="left-table">COR</div>
+					<div flex="60" class="right-table">VERDE MÉDIO</div>
+				</div>
+
+				<div layout="row" class="table-product">
+					<div flex="40" class="left-table">DESTAQUES</div>
+					<div flex="60" class="right-table" style="font-size: 3.5vw;">EXCELENTE QUALIDADE COMERCIAL, VOLUMOSA, TOLERANTE A TEMPERATURAS ELEVADAS E AO PENDOAMENTO</div>
+				</div-->
+			</div-->
+</ion-view>

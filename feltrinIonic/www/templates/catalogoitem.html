@@ -1,0 +1,7 @@
+<ion-view view-title="{{topTitle}}">
+  <ion-content align="center" style="margin-top:1%;">
+  		<input type="text" placeholder="   _Digite o que você procura" class="input-catalogo-item" ng-model="busca">
+
+		<button class ="sub-items-catalogo" ng-click="clickCategoria(item.id); goto('app.listaprodutos')" ng-repeat="item in items | filter: busca">{{::item.titulo}}</button>
+  </ion-content>
+</ion-view>

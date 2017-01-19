@@ -1,0 +1,46 @@
+<ion-view view-title="Catálogo">
+  <ion-content align="center">
+    	<div class="first-line-catalogo">Nossa lista de <span class="bolder-text">Produtos</span></div>
+		<div class="second-line-catalogo">Encontre todas as informações no catálogo.</div>
+	<div class="row responsive-sm" style="width:100%">
+		<div  class="col" style="margin-bottom: 1em" >
+			<button ng-click="clickLinha(linhas[0]); goto('app.catalogoitem')" class="item-catalogo" style="background-image: url('img/picture-catalogo-1.png'); background-repeat: no-repeat; background-size: 100% 95px; background-color: #96C712;">
+				<p class="title-item-catalogo" ng-bind="::linhas[0].titulo"></p>
+			</button>
+		</div>
+
+		<div class="col" style="margin-bottom: 1em">
+			<button ng-click="clickLinha(linhas[1]); goto('app.catalogoitem')" class="item-catalogo" style="background-image: url('img/picture-catalogo-2.png'); background-repeat: no-repeat; background-size: 100% 95px; background-color: #008C47;">
+				<p class="title-item-catalogo" ng-bind="::linhas[1].titulo"></p>
+			</button>
+		</div>
+	</div>
+	<div class="row responsive-sm" style="width:100%">
+		<div class="col" style="margin-bottom: 1em">
+			<button ng-click="clickLinha(linhas[2]); goto('app.catalogoitem')" class="item-catalogo" style="background-image: url('img/picture-catalogo-3.png'); background-repeat: no-repeat; background-size: 100% 95px; background-color: #96C712;">
+				<p class="title-item-catalogo" ng-bind="::linhas[2].titulo"> </p>
+			</button>
+		</div>
+
+		<div class="col" style="margin-bottom: 1em">
+			<button ng-click="clickLinha(linhas[3]); goto('app.catalogoitem')" class="item-catalogo" style="background-image: url('img/picture-catalogo-4.png'); background-repeat: no-repeat; background-size: 100% 95px; background-color: #008C47;">
+				<div class="title-item-catalogo" ng-bind="::linhas[3].titulo"></div>
+			</button>
+		</div>
+
+
+	</div>
+
+	<div class="row responsive-sm" style="width:100%" ng-if="linhas.length > 4">
+
+		<div class="col" style="margin-bottom: 1em">
+			<button ng-click="clickLinha(linhas[4]); goto('app.catalogoitem')" class="item-catalogo" style="background-image: url('img/imagens_nutrigarden.png'); background-repeat: no-repeat; background-size: 100% 95px; background-color: #008C47;">
+				<div class="title-item-catalogo" ng-bind="::linhas[4].titulo"></div>
+			</button>
+		</div>
+
+
+	</div>
+
+  </ion-content>
+</ion-view>

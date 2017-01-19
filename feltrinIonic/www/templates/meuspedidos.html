@@ -1,0 +1,66 @@
+<ion-view view-title="Meus Pedidos">
+  <ion-content align="center" style="margin-top:1%;">
+
+
+		<div class="msgListaPedido bolder-text" ng-show="showMsgListaPedido">Nenhum pedido cadastrado</div>
+
+  	    	<div id="listaProdutos" ng-if="showListaProdutos==1" style="margin-top:5%;">
+
+			<div class="row" ng-click="clickPedido(dado, index);" ng-repeat="dado in dados  |  limitTo: 15" ng-class="{'fundo-roxo': dado.tipo=='Aguardando envio', 'fundo-amarelo': dado.tipo=='Rascunho', 'fundo-verde': dado.tipo=='Sincronizado'}" >
+				<div class="col" >
+					<label class="row " style="font-size: 1.1em; text-align: left;" ng-bind="::'Pedido '+dado.IdDoPedido"></label>
+					<label class="row bolder-text" style="font-size: 0.9em; text-align: left;" ng-bind="::dado.nomeCliente+' - '+dado.Cliente"></label>
+					<div class="row">
+						<label flex="30" class="bolder-text" style="color: #B9B9C8; font-size: 1.1em; text-align: left;" ng-bind="::'Status: '+dado.tipo"></label>
+					</div> 
+				</div>
+			</div>
+
+			<div class="row" ng-repeat="dado in dados2  |  limitTo: 15" ng-click="clickPedido(dado, index);" ng-class="{'fundo-roxo': dado.tipo=='Aguardando envio', 'fundo-amarelo': dado.tipo=='Rascunho', 'fundo-verde': dado.tipo=='Sincronizado'}">
+				<div class="col" >
+					<label class="row " style="font-size: 1.1em; text-align: left;" ng-bind="::'Pedido '+dado.IdDoPedido"></label>
+					<label class="row bolder-text" style="font-size: 0.9em; text-align: left;" ng-bind="::dado.nomeCliente+' - '+dado.Cliente"></label>
+					<div class="row">
+						<label flex="30" class="bolder-text" style="color: #B9B9C8; font-size: 1.1em; text-align: left;" ng-bind="::'Status: '+dado.tipo"></label>
+					</div> 
+				</div>
+			</div>
+
+		</div>
+
+		<div id="listaProdutos" ng-if="showListaProdutos==2" style="margin-top:5%;">
+
+			<div class="col" style="position:absolute; width:50%; left:0; top: 2%;">
+				<div class="row"  ng-repeat="dado in dados  |  limitTo: 15" ng-click="clickPedido(dado, index);" ng-class="{'fundo-roxo': dado.tipo=='Aguardando envio', 'fundo-amarelo': dado.tipo=='Rascunho', 'fundo-verde': dado.tipo=='Sincronizado'}">
+					<div class="col" >
+						<label class="row " style="font-size: 1.1em; text-align: left;" ng-bind="::'Pedido '+dado.IdDoPedido"></label>
+						<label class="row bolder-text" style="font-size: 0.9em; text-align: left;" ng-bind="::dado.nomeCliente+' - '+dado.Cliente"></label>
+						<div class="row">
+							<label flex="30" class="bolder-text" style="color: #B9B9C8; font-size: 1.1em; text-align: left;" ng-bind="::'Status: '+dado.tipo"></label>
+						</div> 
+					</div>
+				</div>
+			</div>
+
+			<div class="col" style="position:absolute; width:50%; right:0; top: 2%;">
+				<div class="row" ng-click="clickPedido(dado, index);" ng-repeat="dado in dados2  |  limitTo: 15" ng-class="{'fundo-roxo': dado.tipo=='Aguardando envio', 'fundo-amarelo': dado.tipo=='Rascunho', 'fundo-verde': dado.tipo=='Sincronizado'}">
+					<div class="col" >
+						<label class="row " style="font-size: 1.1em; text-align: left;" ng-bind="::'Pedido '+dado.IdDoPedido"></label>
+						<label class="row bolder-text" style="font-size: 0.9em; text-align: left;" ng-bind="::dado.nomeCliente+' - '+dado.Cliente"></label>
+						<div class="row">
+							<label flex="30" class="bolder-text" style="color: #B9B9C8; font-size: 1.1em; text-align: left;" ng-bind="::'Status: '+dado.tipo"></label>
+						</div> 
+					</div>
+				</div>
+			</div>
+
+		</div>
+
+		<div style="height: 200px;"></div>
+
+  </ion-content>
+ 
+    
+
+
+</ion-view>

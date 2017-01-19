@@ -1,0 +1,45 @@
+<ion-modal-view class="modal">
+  <!--ion-header-bar>
+    <h1 class="title">Login</h1>
+    <div class="buttons">
+      <button class="button button-clear" ng-click="closeLogin()">Close</button>
+    </div>
+  </ion-header-bar-->
+  <ion-content class="contentModal"> 
+  
+      <div class="product-title" align="center">
+
+        <div class="ion-close fecharModal" ng-click="closeModal()"></div>
+        <div class="ion-checkmark confirmaModal" ng-click="closeModal()"></div>
+
+        <label class="title-top" ng-bind="produto.Nome"></label>
+      </div>
+
+      <!--div class="divClose" align="center" ng-click="closeModal()">
+        <img class="close" src="img/close.png">
+      </div-->
+
+      <div class="product-details" layout="column">
+        <div class="row top-product">
+          <div class="col">
+            <div class="color-product-detail"><img ng-src="{{produto.Foto}}" id="imagemDetalhe" class="image-product-detail"></div>
+          </div>
+          <div class="col" style="width: 60%;text-align: left;">
+            <div  class="product-detail-price">R$320,00</div>
+            <div ><input type="number" placeholder="QUANTIDADE" class="product-detail-quant"></div>
+            <div ><button class="addtocart-button">Adicionar ao Carrinho</button></div>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="left-table" style="color:black">Dados Técnicos:</div>
+        </div>
+
+        <div class="col table-product" ng-repeat="dado in dadosTecnicos">
+          <div class="left-table" ng-bind="dado.Nome">REF</div>
+          <div class="right-table" ng-bind="dado.Descricao"></div>
+        </div>
+
+  </div>
+  </ion-content>
+</ion-modal-view>

@@ -1,0 +1,145 @@
+<ion-view view-title="Pedido">
+
+
+<div align="center" style="margin-top:6vh;">
+	<div class="first-line-catalogo" style="text-align: left;margin-right: 5%;margin-left: 5%;font-size: 1.6em;">Pedido: <span class="bolder-text">&nbsp{{idPedido}}</span>&nbsp&nbsp&nbsp&nbspTotal: <span class="bolder-text">&nbsp{{valorTotal}}</span></div>
+	<div class="first-line-catalogo" style="text-align: left;margin-right: 5%;margin-left: 5%;font-size: 1.6em;margin-top:0;">Cliente: <span class="bolder-text">&nbsp{{cliente}}</span></div>	
+</div>
+
+  <ion-content align="center" style="margin-top:15vh;">
+
+
+		<div class="msgListaPedido bolder-text" ng-show="showMsgListaPedido">Nenhum item adicionado</div>
+
+  	    	<div id="listaProdutos" ng-if="showListaProdutos==1" style="margin-top:5%;">
+
+			<div class="row itemPedido" ng-click="clickProduto(dado);" on-hold="longClickDelete(dado, dado.index)" ng-repeat="dado in dados">
+				<div class="col-50" align="left" style="margin-top: 0.8vh;margin-left:2%">
+					<label style="font-size: 1.1em; text-align: left; margin-top:4vh;" ng-bind="::dado.Grade+' - '+dado.Linha" ></label>
+
+					<label class="row bolder-text labelCinzaProduto" style="margin-top: -10px;margin-left: -10px;text-align: left;" ng-bind="::dado.DescricaoDoGrupo.toUpperCase()" ng-show="dado.Grade!= null"></label>
+					<div ng-show="dado.Grade == null" style="margin-top:-5px">
+						<label flex="30" class="bolder-text labelCinzaProduto" ng-bind="::dado.DescricaoDaReferencia.toUpperCase() +' - '+dado.CodigoDoItem.toUpperCase()+' - '+dado.UnidadeDeEmbalagem.toUpperCase()"></label>
+					</div> 
+					<label flex="30" class="bolder-text" style="color: blue; font-size: 1.1em; text-align: left;" ng-bind="::dado.Quantidade+' '+dado.UnidadeDeVenda"></label>
+				</div>
+				<div class="col-20">
+					<div class="col">
+						<label flex="30" class="bolder-text" style="color: #B9B9C8; font-size: 1em; text-align: left;" ng-bind="::'Unit.'"></label>
+						<input ng-disabled="ComissaoVariavel == 0" class="inputPreco"  ng-model="dado.PrecoDeVenda" ng-blur="blurPrecoUn(dado.PrecoDeVenda, dado.PrecoTotal, dado.Quantidade, dado.index)" ui-number-mask/>
+					</div> 
+				</div>
+				<div class="col-30">
+					<div class="col">
+						<label flex="30" class="bolder-text" style="color: #B9B9C8; font-size: 1em; text-align: left;" ng-bind="::'Total'"></label>
+						<input ng-disabled="ComissaoVariavel == 0" class="inputPreco inputPrecoTotal" ng-model="dado.PrecoTotal" ng-blur="blurPrecoTotal(dado.PrecoDeVenda, dado.PrecoTotal, dado.Quantidade, dado.index)" ui-number-mask/>
+					</div> 
+				</div>
+			</div>
+
+			<div class="row itemPedido" ng-repeat="dado in dados2" on-hold="longClickDelete(dado, dado.index)">
+				<div class="col-50" align="left" style="margin-top: 0.8vh;margin-left:2%">
+					<label style="font-size: 1.1em; text-align: left; margin-top:4vh;" ng-bind="::dado.Grade+' - '+dado.Linha" ></label>
+
+					<label class="row bolder-text labelCinzaProduto" style="margin-top: -10px;margin-left: -10px;text-align: left;" ng-bind="::dado.DescricaoDoGrupo.toUpperCase()" ng-show="dado.Grade!= null"></label>
+					<div ng-show="dado.Grade == null" style="margin-top:-5px">
+						<label flex="30" class="bolder-text labelCinzaProduto" ng-bind="::dado.DescricaoDaReferencia.toUpperCase() +' - '+dado.CodigoDoItem.toUpperCase()+' - '+dado.UnidadeDeEmbalagem.toUpperCase()"></label>
+					</div> 
+					<label flex="30" class="bolder-text" style="color: blue; font-size: 1.1em; text-align: left;" ng-bind="::dado.Quantidade+' '+dado.UnidadeDeVenda"></label>
+				</div>
+				<div class="col-20">
+					<div class="col">
+						<label flex="30" class="bolder-text" style="color: #B9B9C8; font-size: 1em; text-align: left;" ng-bind="::'Unit.'"></label>
+						<input ng-disabled="ComissaoVariavel == 0" class="inputPreco"  ng-model="dado.PrecoDeVenda" ng-blur="blurPrecoUn(dado.PrecoDeVenda, dado.PrecoTotal, dado.Quantidade, dado.index)" ui-number-mask/>
+					</div> 
+				</div>
+				<div class="col-30">
+					<div class="col">
+						<label flex="30" class="bolder-text" style="color: #B9B9C8; font-size: 1em; text-align: left;" ng-bind="::'Total'"></label>
+						<input ng-disabled="ComissaoVariavel == 0" class="inputPreco inputPrecoTotal" ng-model="dado.PrecoTotal" ng-blur="blurPrecoTotal(dado.PrecoDeVenda, dado.PrecoTotal, dado.Quantidade, dado.index)" ui-number-mask/>
+					</div> 
+				</div>
+			</div>
+
+		</div>
+
+		<div id="listaProdutos" ng-if="showListaProdutos==2" style="margin-top:5%;">
+
+			<div class="col" style="position:absolute; width:50%; left:0; top: 2%;">
+				<div class="row itemPedido" ng-click="clickProduto(dado);" ng-repeat="dado in dados" on-hold="longClickDelete(dado, dado.index)">
+					<div class="col-50" align="left" style="margin-top: 0.8vh;margin-left:2%">
+						<label style="font-size: 1.5em; text-align: left; margin-top:4vh;" ng-bind="::dado.Grade+' - '+dado.Linha" ></label>
+
+						<label class="row bolder-text labelCinzaProduto" style="margin-top: -10px;margin-left: -10px;text-align: left;" ng-bind="::dado.DescricaoDoGrupo.toUpperCase()" ng-show="dado.Grade!= null"></label>
+						<div ng-show="dado.Grade == null" style="margin-top:-5px">
+							<label flex="30" class="bolder-text labelCinzaProduto" ng-bind="::dado.DescricaoDaReferencia.toUpperCase() +' - '+dado.CodigoDoItem.toUpperCase()+' - '+dado.UnidadeDeEmbalagem.toUpperCase()"></label>
+						</div> 
+						<label flex="30" class="bolder-text" style="color: blue; font-size: 1.5em; text-align: left;" ng-bind="::dado.Quantidade+' '+dado.UnidadeDeVenda"></label>
+					</div>
+					<div class="col-20">
+						<div class="col">
+							<label flex="30" class="bolder-text" style="color: #B9B9C8; font-size: 1.5em; text-align: left;" ng-bind="::'Unit.'"></label>
+							<input ng-disabled="ComissaoVariavel == 0" class="inputPreco"  ng-model="dado.PrecoDeVenda" ng-blur="blurPrecoUn(dado.PrecoDeVenda, dado.PrecoTotal, dado.Quantidade, dado.index)" ui-number-mask/>
+						</div> 
+					</div>
+					<div class="col-30">
+						<div class="col">
+							<label flex="30" class="bolder-text" style="color: #B9B9C8; font-size: 1.5em; text-align: left;" ng-bind="::'Total'"></label>
+							<input ng-disabled="ComissaoVariavel == 0" class="inputPreco inputPrecoTotal" ng-model="dado.PrecoTotal" ng-blur="blurPrecoTotal(dado.PrecoDeVenda, dado.PrecoTotal, dado.Quantidade, dado.index)" ui-number-mask/>
+						</div> 
+					</div>
+				</div>
+			</div>
+
+			<div class="col" style="position:absolute; width:50%; right:0; top: 2%;">
+				<div class="row itemPedido" ng-click="clickProduto(dado);" ng-repeat="dado in dados2" on-hold="longClickDelete(dado, dado.index)">
+					<div class="col-50" align="left" style="margin-top: 0.8vh;margin-left:2%">
+						<label style="font-size: 1.5em; text-align: left; margin-top:4vh;" ng-bind="::dado.Grade+' - '+dado.Linha" ></label>
+
+						<label class="row bolder-text labelCinzaProduto" style="margin-top: -10px;margin-left: -10px;text-align: left;" ng-bind="::dado.DescricaoDoGrupo.toUpperCase()" ng-show="dado.Grade!= null"></label>
+						<div ng-show="dado.Grade == null" style="margin-top:-5px">
+							<label flex="30" class="bolder-text labelCinzaProduto" ng-bind="::dado.DescricaoDaReferencia.toUpperCase() +' - '+dado.CodigoDoItem.toUpperCase()+' - '+dado.UnidadeDeEmbalagem.toUpperCase()"></label>
+						</div> 
+						<label flex="30" class="bolder-text" style="color: blue; font-size: 1.5em; text-align: left;" ng-bind="::dado.Quantidade+' '+dado.UnidadeDeVenda"></label>
+					</div>
+					<div class="col-20">
+						<div class="col">
+							<label flex="30" class="bolder-text" style="color: #B9B9C8; font-size: 1.5em; text-align: left;" ng-bind="::'Unit.'"></label>
+							<input ng-disabled="ComissaoVariavel == 0" class="inputPreco"  ng-model="dado.PrecoDeVenda" ng-blur="blurPrecoUn(dado.PrecoDeVenda, dado.PrecoTotal, dado.Quantidade, dado.index)" ui-number-mask/>
+						</div> 
+					</div>
+					<div class="col-30">
+						<div class="col">
+							<label flex="30" class="bolder-text" style="color: #B9B9C8; font-size: 1.5em; text-align: left;" ng-bind="::'Total'"></label>
+							<input ng-disabled="ComissaoVariavel == 0" class="inputPreco inputPrecoTotal" ng-model="dado.PrecoTotal" ng-blur="blurPrecoTotal(dado.PrecoDeVenda, dado.PrecoTotal, dado.Quantidade, dado.index)" ui-number-mask/>
+						</div> 
+					</div>
+				</div>
+			</div>
+
+		</div>
+
+		<div style="height: 200px;"></div>
+
+  </ion-content>
+
+ 
+    <div class="bottom-menu" ng-show="bottomMenu" ng-controller="novopedidoCtrl">
+	    <button class="button-menu-bottom button-clear" ng-disabled="tipoPedido =='Aguardando envio' || tipoPedido=='Sincronizado'" ng-click="clickClientes()">
+	    <img src="img/icons/bottom-client.png" class="bottom-icons">
+	    </button>
+	    <button class="button-menu-bottom button-clear" ng-disabled="tipoPedido =='Aguardando envio' || tipoPedido=='Sincronizado'" ng-click="goto('app.categorias')">
+	    <img src="img/icons/bottom-items.png" class="bottom-icons" style="margin-right:13%;">
+	    </button>
+
+	    <button  class="button-menu-bottom button-clear" ng-click="showComentarios()">
+	    <img src="img/icons/bottom-comments.png" class="bottom-icons">
+	    </button>
+
+	    <button class="button-menu-bottom button-clear" ng-disabled="tipoPedido =='Aguardando envio' || tipoPedido=='Sincronizado'" ng-click="salvarPedido()">
+	    <img src="img/icons/bottom-save.png" class="bottom-icons">
+	    </button>
+	</div>
+
+
+</ion-view>

@@ -1,0 +1,35 @@
+.page-catalogo{
+	text-align: center;
+}
+
+.first-line-catalogo{
+    padding-top: 5%;
+    font-size: 25px;
+    color: black;
+}
+
+.second-line-catalogo{
+    font-size: 20px;
+    color: #868695;
+    margin-top: 2%;
+    margin-bottom: 2%;
+}
+
+.item-catalogo{
+	width: 90%;
+    margin-left: 5%;
+    margin-right: 5%;
+    font-family: 'Titillium Web';
+    font-size: 15px;
+    color: white;
+    height: 100px;
+    margin-bottom: 0px;
+}
+
+.title-item-catalogo{
+	font-size: 25px;
+}
+
+.bar-stable .button.button-clear{
+	color:white;
+}

@@ -1,0 +1,43 @@
+<ion-view view-title="Linhas">
+  <ion-content align="center">
+    	<div class="first-line-catalogo">Nossa linha de <span class="bolder-text">Produtos</span></div>
+		<div class="second-line-catalogo">Encontre o que procura e adicione ao carrinho.</div>
+	<div id="listaProdutos" ng-if="showListaProdutos==1">
+	
+		<div  class="row" style="margin-bottom: 1em" ng-repeat="linha in dados">
+			<button ng-click="clickLinha(linha)" class="item-catalogo" style="background-image: url('img/background-top.png'); background-repeat: no-repeat; background-size: 100% 95px; background-color: #96C712;">
+				<p class="title-item-catalogo" ng-bind="::linha.Linha"></p>
+			</button>
+		</div>
+
+		<div  class="row" style="margin-bottom: 1em" ng-repeat="linha in dados2">
+			<button ng-click="clickLinha(linha)" class="item-catalogo" style="background-image: url('img/background-top.png'); background-repeat: no-repeat; background-size: 100% 95px; background-color: #96C712;">
+				<p class="title-item-catalogo" ng-bind="::linha.Linha"></p>
+			</button>
+		</div>
+
+	</div>
+
+
+	<div id="listaProdutos" ng-if="showListaProdutos==2">
+	
+		<div class="col" style="position:absolute; width:50%; left:0; top: 10vh;">
+			<div  class="row" style="margin-bottom: 1em" ng-repeat="linha in dados">
+				<button ng-click="clickLinha(linha)" class="item-catalogo" style="background-image: url('img/background-top.png'); background-repeat: no-repeat; background-size: 100% 95px; background-color: #96C712;">
+					<p class="title-item-catalogo" ng-bind="::linha.Linha"></p>
+				</button>
+			</div>
+		</div>
+
+		<div class="col" style="position:absolute; width:50%; right:0; top: 10vh">
+			<div  class="row" style="margin-bottom: 1em" ng-repeat="linha in dados2">
+				<button ng-click="clickLinha(linha)" class="item-catalogo" style="background-image: url('img/background-top.png'); background-repeat: no-repeat; background-size: 100% 95px; background-color: #96C712;">
+					<p class="title-item-catalogo" ng-bind="::linha.Linha"></p>
+				</button>
+			</div>
+		</div>
+
+	</div>
+
+  </ion-content>
+</ion-view>

@@ -1,0 +1,51 @@
+<ion-modal-view class="modal">
+  <!--ion-header-bar>
+    <h1 class="title">Login</h1>
+    <div class="buttons">
+      <button class="button button-clear" ng-click="closeLogin()">Close</button>
+    </div>
+  </ion-header-bar-->
+  <ion-content class="contentModal" > 
+
+      <div class="product-title" align="center">
+
+        <div class="ion-close fecharModal" style="margin-top: -1.5vh;" ng-click="clickCancelar()"></div>
+
+        <div class="title-top" ng-bind="produto.Nome"></div>
+      </div>
+
+      <!--div class="divClose" align="center" ng-click="closeModal()">
+        <img class="close" src="img/close.png">
+      </div-->
+
+
+      <div align="center">
+
+
+    <button class="button button-positive" style="margin-top: 1.5vh;border-radius: 0;
+    width: 45%;
+    margin: 5px;" ng-click="clickEditarItem()">
+        Editar
+      </button>
+      <button class="button button-calm" style="border-radius: 0;
+    width: 45%;
+    margin: 5px;" ng-click="clickDeletarItem()">
+        Deletar tudo
+      </button>
+    </div>
+
+      <div class="row" ng-repeat="dado in itensGrade">
+        <div class="col-75">
+          <label class="row " style="font-size: 1.1em; text-align: left;" ng-bind="::dado.DescricaoDoItem"></label>
+          <div class="row">
+            <label flex="30" class="bolder-text" style="color: #B9B9C8; font-size: 1.1em; text-align: left;" ng-bind="::'REF.'+dado.Referencia"></label>
+          </div> 
+        </div>
+        <div class="col">
+          <input class="inputQuantidade" ng-model="dado.Quantidade" ng-change="" type="number" />
+        </div>
+      </div>
+
+      
+  </ion-content>
+</ion-modal-view>

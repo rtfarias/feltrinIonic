@@ -1,0 +1,149 @@
+<ion-view view-title="{{topTitle}}">
+  <ion-content align="center" style="margin-top:1%;">
+
+
+  		<label flex="30" class="bolder-text" style="color: black; font-size: 1.6em; text-align: left;" ng-bind="::dados[0].DescricaoDoGrupo"></label>
+
+    	<div id="listaProdutos" ng-if="showListaProdutos==1">
+
+	    	<div class="row" ng-repeat="dado in dados">
+
+					<div class="col-50">
+						<label class="row " style="font-size: 1.1em; text-align: left;" ng-bind="::dado.DescricaoDoItem"></label>
+						<div class="row">
+							<label flex="30" class="bolder-text" style="color: #B9B9C8; font-size: 1.1em; text-align: left;" ng-bind="::'Cod.'+dado.CodigoDoItem"></label>
+						</div> 
+					</div>
+					<div class="col-25">
+						<label class="row bolder-text" style="font-size: 0.95em; text-align: left;" ng-bind="::'R$ '+dado.PrecoDeVenda" ng-show="dado.PrecoDeVenda != 'Consultar'"></label>
+						<label class="row bolder-text" style="    margin-top: 2vh;font-size: 0.95em; text-align: left;" ng-bind="::dado.PrecoDeVenda" ng-show="dado.PrecoDeVenda == 'Consultar'"></label>
+						<div class="row">
+							<label flex="30" class="bolder-text" style="color: #B9B9C8; font-size: 1.1em; text-align: left;" ng-bind="::dado.PesoLiquido+' '+dado.UnidadeDeVenda"></label>
+						</div> 
+					</div>
+					<div class="col" ng-show="dado.PrecoDeVenda != 'Consultar'">
+						<input class="inputQuantidade" ng-model="dado.Quantidade" ng-change="changeItemPedido(dado)" type="number" />
+					</div>
+
+	    	</div>
+
+	    	<div class="row" ng-repeat="dado in dados2">
+
+					<div class="col-50">
+						<label class="row " style="font-size: 1.1em; text-align: left;" ng-bind="::dado.DescricaoDoItem"></label>
+						<div class="row">
+							<label flex="30" class="bolder-text" style="color: #B9B9C8; font-size: 1.1em; text-align: left;" ng-bind="::'Cod.'+dado.CodigoDoItem"></label>
+						</div> 
+					</div>
+					<div class="col-25">
+						<label class="row bolder-text" style="font-size: 0.95em; text-align: left;" ng-bind="::'R$ '+dado.PrecoDeVenda" ng-show="dado.PrecoDeVenda != 'Consultar'"></label>
+						<label class="row bolder-text" style="    margin-top: 2vh;font-size: 0.95em; text-align: left;" ng-bind="::dado.PrecoDeVenda" ng-show="dado.PrecoDeVenda == 'Consultar'"></label>
+						<div class="row">
+							<label flex="30" class="bolder-text" style="color: #B9B9C8; font-size: 1.1em; text-align: left;" ng-bind="::dado.PesoLiquido+' '+dado.UnidadeDeVenda"></label>
+						</div> 
+					</div>
+					<div class="col" ng-show="dado.PrecoDeVenda != 'Consultar'">
+						<input class="inputQuantidade" ng-model="dado.Quantidade" ng-change="changeItemPedido(dado)" type="number" />
+					</div>
+
+	    	</div>
+
+			
+
+		</div>
+
+		<div id="listaProdutos" ng-if="showListaProdutos==2">
+
+
+			<div class="col" style="position:absolute; width:48%; left:0; top: 2%;">
+				<div class="row" ng-repeat="dado in dados">
+		    		
+						<div class="col-50">
+							<label class="row " style="font-size: 1.1em; text-align: left;" ng-bind="::dado.DescricaoDoItem"></label>
+							<div class="row">
+								<label flex="30" class="bolder-text" style="color: #B9B9C8; font-size: 1.1em; text-align: left;" ng-bind="::'Cod.'+dado.CodigoDoItem"></label>
+							</div> 
+						</div>
+						<div class="col-25">
+							<label class="row bolder-text" style="font-size: 0.95em; text-align: left;" ng-bind="::'R$ '+dado.PrecoDeVenda" ng-show="dado.PrecoDeVenda != 'Consultar'"></label>
+							<label class="row bolder-text" style="    margin-top: 2vh;font-size: 0.95em; text-align: left;" ng-bind="::dado.PrecoDeVenda" ng-show="dado.PrecoDeVenda == 'Consultar'"></label>
+							<div class="row">
+								<label flex="30" class="bolder-text" style="color: #B9B9C8; font-size: 1.1em; text-align: left;" ng-bind="::dado.PesoLiquido+' '+dado.UnidadeDeVenda"></label>
+							</div> 
+						</div>
+						<div class="col" ng-show="dado.PrecoDeVenda != 'Consultar'">
+							<input class="inputQuantidade" ng-model="dado.Quantidade" ng-change="changeItemPedido(dado)" type="number" />
+						</div>
+					</div>
+			</div>
+
+			<div class="col" style="position:absolute; width:48%; right:2%; top: 2%;">
+				<div class="row" ng-repeat="dado in dados2">
+
+						<div class="col-50">
+							<label class="row " style="font-size: 1.1em; text-align: left;" ng-bind="::dado.DescricaoDoItem"></label>
+							<div class="row">
+								<label flex="30" class="bolder-text" style="color: #B9B9C8; font-size: 1.1em; text-align: left;" ng-bind="::'Cod.'+dado.CodigoDoItem"></label>
+							</div> 
+						</div>
+						<div class="col-25">
+							<label class="row bolder-text" style="font-size: 0.95em; text-align: left;" ng-bind="::'R$ '+dado.PrecoDeVenda" ng-show="dado.PrecoDeVenda != 'Consultar'"></label>
+							<label class="row bolder-text" style="    margin-top: 2vh;font-size: 0.95em; text-align: left;" ng-bind="::dado.PrecoDeVenda" ng-show="dado.PrecoDeVenda == 'Consultar'"></label>
+							<div class="row">
+								<label flex="30" class="bolder-text" style="color: #B9B9C8; font-size: 1.1em; text-align: left;" ng-bind="::dado.PesoLiquido+' '+dado.UnidadeDeVenda"></label>
+							</div> 
+						</div>
+						<div class="col" ng-show="dado.PrecoDeVenda != 'Consultar'">
+							<input class="inputQuantidade" ng-model="dado.Quantidade" ng-change="changeItemPedido(dado)" type="number" />
+						</div>
+					</div>
+
+			</div>
+
+		</div>
+
+		<div style="height: 250px"></div>
+
+
+
+  </ion-content>
+
+  		<!--div id="detalhesProduto" class="col"  ng-show="showDetalhes==true" >
+
+				<div class="row">
+					<div>
+						<div class="color-product-detail2"><img ng-src="{{produto.Foto}}" id="imagemDetalhe" class="image-product-detail2"></div>
+					</div>
+				</div>
+
+				<div class="row">
+					<div class="left-table2">REF</div>
+					<div class="right-table2" ng-bind="produto.Referencia"></div>
+				</div>
+
+				<div class="row">
+					<div class="left-table2">CULTIVAR</div>
+					<div class="right-table2" ng-bind="produto.Nome">ALFACE MÔNICA SF31</div>
+				</div>
+
+				<div class="row">
+					<div class="left-table2">COLHEITA (DIAS)</div>
+					<div class="right-table2" ng-bind="produto.Cultivo">60 A 70 DIAS</div>
+				</div>
+
+				<div class="row">
+					<div class="left-table2">TIPO</div>
+					<div class="right-table2" ng-bind="produto.Categoria">CRESPA</div>
+				</div>
+
+				<!--div layout="row" class="table-product">
+					<div flex="40" class="left-table">COR</div>
+					<div flex="60" class="right-table">VERDE MÉDIO</div>
+				</div>
+
+				<div layout="row" class="table-product">
+					<div flex="40" class="left-table">DESTAQUES</div>
+					<div flex="60" class="right-table" style="font-size: 3.5vw;">EXCELENTE QUALIDADE COMERCIAL, VOLUMOSA, TOLERANTE A TEMPERATURAS ELEVADAS E AO PENDOAMENTO</div>
+				</div-->
+			</div-->
+</ion-view>

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+    <title></title>
+
+    <link href="lib/ionic/css/ionic.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="css/default.css">
+    <link rel="stylesheet" type="text/css" href="css/home.css">
+    <link rel="stylesheet" type="text/css" href="css/novopedido.css">
+    <link rel="stylesheet" type="text/css" href="css/detalheproduto.css">
+    <link rel="stylesheet" type="text/css" href="css/catalogo.css">
+    <link rel="stylesheet" type="text/css" href="css/catalogoitem.css">
+    <link rel="stylesheet" type="text/css" href="css/login.css">
+    <link rel="stylesheet" type="text/css" href="css/clientes.css">
+
+    <!-- IF using Sass (run gulp sass first), then uncomment below and remove the CSS includes above
+    <link href="css/ionic.app.css" rel="stylesheet">
+    -->
+
+    <!-- ionic/angularjs js -->
+    <script src="lib/ionic/js/ionic.bundle.js"></script>
+
+    <!-- cordova script (this will be a 404 during development) -->
+    <script src="cordova.js"></script>
+
+    <!-- your app's js -->
+    <script type="text/javascript" src="js/ngStorage.min.js"></script>
+    <script type="text/javascript" src="js/dbase.js"></script>
+    <script type="text/javascript" src="js/controllers/catalogoCtrl.js"></script>
+    <script type="text/javascript" src="js/controllers/catalogoitemCtrl.js"></script>
+    <script type="text/javascript" src="js/controllers/listaprodutosCtrl.js"></script>
+    <script type="text/javascript" src="js/controllers/detalhesCtrl.js"></script>
+    <script type="text/javascript" src="js/controllers/novopedidoCtrl.js"></script>
+    <script type="text/javascript" src="js/controllers/buscaclientesCtrl.js"></script>
+    <script type="text/javascript" src="js/controllers/cadastroclientesCtrl.js"></script>
+    <script type="text/javascript" src="js/controllers/categoriasCtrl.js"></script>
+    <script type="text/javascript" src="js/controllers/subcategoriasCtrl.js"></script>
+    <script type="text/javascript" src="js/controllers/produtospedidoCtrl.js"></script>
+    <script type="text/javascript" src="js/controllers/meuspedidosCtrl.js"></script>
+    <script type="text/javascript" src="js/controllers/subprodutospedidoCtrl.js"></script>
+    <script type="text/javascript" src="js/angular-input-masks-standalone.min.js"></script>
+    <script src="js/app.js"></script>
+    <script src="js/controllers.js"></script>
+  </head>
+
+  <body ng-app="starter">
+
+    <div class="divProgress" align="center" ng-show="showLoading" ng-click="closeLoading()">
+        <div class="labelCarregando" ng-bind="labelCarregando"></div>
+        <progress value="{{valorProgress}}" max="100"></progress>
+        <!--md-progress-circular md-mode="indeterminate"></md-progress-circular-->
+    </div>
+
+
+    <div class="row row-center divProgressPaginas" align="center" ng-show="showLoadingPaginas" ng-click="closeLoadingPaginas()">
+        <img class="col-center" src="img/load.gif" style="width: 30px !important;
+    height: 30px;
+    z-index: 100;
+    margin-left: 45%;
+    margin-right: 45%;"></img>
+    </div>
+
+    <ion-nav-view></ion-nav-view>
+  </body>
+</html>

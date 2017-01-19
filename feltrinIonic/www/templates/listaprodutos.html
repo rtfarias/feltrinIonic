@@ -1,0 +1,119 @@
+<ion-view view-title="{{topTitle}}">
+  
+
+	<input type="text" placeholder="   _Digite o que você procura" class="input-catalogo-item" ng-model="busca" style="margin-top: 10vh;">
+
+  <ion-content align="center" style="margin-top:12vh;">
+    	<div id="listaProdutos" ng-if="showListaProdutos==1">
+
+			<div class="row" ng-click="clickProdutoDetalhes(dado);" ng-repeat="dado in dados | filter: busca">
+				<div >
+					<div class="color-novopedido" >
+						<img ng-src="{{::dado.Foto}}" id="imagem" class="pic-novopedido">
+					</div>
+				</div>
+				<div class="col">
+					<label class="row bolder-text" style="font-size: 0.95em; text-align: left;" ng-bind="::dado.Nome"></label>
+					<label class="row" style="font-size: 1.1em; text-align: left;" ng-bind="::dado.Linha"></label>
+					<div class="row">
+						<label flex="30" class="bolder-text" style="color: #B9B9C8; font-size: 1.1em; text-align: left;" ng-bind="::'REF.'+dado.Referencia"></label>
+					</div> 
+				</div>
+			</div>
+
+			<div class="row" ng-repeat="dado in dados2 | filter: busca">
+				<div ng-click="clickProduto(dado);">
+					<div class="color-novopedido" >
+						<img ng-src="{{::dado.Foto}}" id="imagem" class="pic-novopedido">
+					</div>
+				</div>
+				<div class="col" ng-click="clickProdutoDetalhes(dado);">
+					<label class="row bolder-text" style="font-size: 0.95em; text-align: left;" ng-bind="::dado.Nome"></label>
+					<label class="row" style="font-size: 1.1em; text-align: left;" ng-bind="::dado.Linha"></label>
+					<div class="row">
+						<label flex="30" class="bolder-text" style="color: #B9B9C8; font-size: 1.1em; text-align: left;" ng-bind="::'REF.'+dado.Referencia"></label>
+					</div> 
+				</div>
+			</div>
+
+		</div>
+
+		<div id="listaProdutos" ng-if="showListaProdutos==2">
+
+			<div class="col" style="position:absolute; width:50%; left:0; top: 2%;">
+				<div class="row" ng-click="clickProduto(dado);" ng-repeat="dado in dados  | filter: busca">
+					<div ng-click="clickProdutoDetalhes(dado);">
+						<div class="color-novopedido" >
+							<img ng-src="{{::dado.Foto}}" id="imagem" class="pic-novopedido">
+						</div>
+					</div>
+					<div class="col">
+						<label class="row bolder-text" style="font-size: 0.95em; text-align: left;" ng-bind="::dado.Nome"></label>
+						<label class="row" style="font-size: 1.1em; text-align: left;" ng-bind="::dado.Linha"></label>
+						<div class="row">
+							<label flex="30" class="bolder-text" style="color: #B9B9C8; font-size: 1.1em; text-align: left;" ng-bind="::'REF.'+dado.Referencia"></label>
+						</div> 
+					</div>
+				</div>
+			</div>
+
+			<div class="col" style="position:absolute; width:50%; right:0; top: 2%;">
+				<div class="row" ng-click="clickProduto(dado);" ng-repeat="dado in dados2  | filter: busca">
+					<div ng-click="clickProdutoDetalhes(dado);">
+						<div class="color-novopedido" >
+							<img ng-src="{{::dado.Foto}}" id="imagem" class="pic-novopedido">
+						</div>
+					</div>
+					<div class="col" ng-click="clickProduto(dado);">
+						<label class="row bolder-text" style="font-size: 0.95em; text-align: left;" ng-bind="::dado.Nome"></label>
+						<label class="row" style="font-size: 1.1em; text-align: left;" ng-bind="::dado.Linha"></label>
+						<div class="row">
+							<label flex="30" class="bolder-text" style="color: #B9B9C8; font-size: 1.1em; text-align: left;" ng-bind="::'REF.'+dado.Referencia"></label>
+						</div> 
+					</div>
+				</div>
+			</div>
+
+		</div>
+
+  </ion-content>
+
+  		<!--div id="detalhesProduto" class="col"  ng-show="showDetalhes==true" >
+
+				<div class="row">
+					<div>
+						<div class="color-product-detail2"><img ng-src="{{produto.Foto}}" id="imagemDetalhe" class="image-product-detail2"></div>
+					</div>
+				</div>
+
+				<div class="row">
+					<div class="left-table2">REF</div>
+					<div class="right-table2" ng-bind="produto.Referencia"></div>
+				</div>
+
+				<div class="row">
+					<div class="left-table2">CULTIVAR</div>
+					<div class="right-table2" ng-bind="produto.Nome">ALFACE MÔNICA SF31</div>
+				</div>
+
+				<div class="row">
+					<div class="left-table2">COLHEITA (DIAS)</div>
+					<div class="right-table2" ng-bind="produto.Cultivo">60 A 70 DIAS</div>
+				</div>
+
+				<div class="row">
+					<div class="left-table2">TIPO</div>
+					<div class="right-table2" ng-bind="produto.Categoria">CRESPA</div>
+				</div>
+
+				<!--div layout="row" class="table-product">
+					<div flex="40" class="left-table">COR</div>
+					<div flex="60" class="right-table">VERDE MÉDIO</div>
+				</div>
+
+				<div layout="row" class="table-product">
+					<div flex="40" class="left-table">DESTAQUES</div>
+					<div flex="60" class="right-table" style="font-size: 3.5vw;">EXCELENTE QUALIDADE COMERCIAL, VOLUMOSA, TOLERANTE A TEMPERATURAS ELEVADAS E AO PENDOAMENTO</div>
+				</div-->
+			</div-->
+</ion-view>
